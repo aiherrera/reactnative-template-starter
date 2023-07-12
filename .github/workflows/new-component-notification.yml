@@ -37,7 +37,7 @@ jobs:
           fi
           echo "COMPONENT_PATH=$FILE_PATH" >> $GITHUB_ENV
 
-          NAME=$(echo "$FILE_PATH" | grep -o -P "(?<=src/components/).*(?=.js)")
+          NAME=$(echo "$FILE_PATH" | grep -o -P "(?<=src/components/).*(?=\.(js|jsx|ts|tsx))")
           echo "COMPONENT_NAME=$NAME" >> $GITHUB_ENV
 
       - name: Update README.md
