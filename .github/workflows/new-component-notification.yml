@@ -1,0 +1,41 @@
+name: Component Notification
+
+on:
+  push:
+    # paths:
+    #   - 'src/components/**'
+
+env:
+  URL: https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
+
+jobs:
+  
+  notify:
+    runs-on: ubuntu-latest
+
+    permissions:
+      deployments: write
+      contents: write
+      statuses: write
+      actions: write
+      checks: read
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Update README.md
+        run: |
+          COMPONENT_NAME=$(git diff --name-only HEAD^ -- HEAD 'src/components/')
+          if [[ -n "$COMPONENT_NAME" ]]; then
+            COMPONENT_NAME="- New component added: $COMPONENT_NAME"
+            sed -i "0,/^<!-- COMPONENT_LIST -->$/ s//<!-- COMPONENT_LIST -->\n$COMPONENT_NAME/" README.md
+          fi
+          cat README.md
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.co
+          git commit -am "🚀 New component added" --no-verify
+          git push ${{ env.URL }}
