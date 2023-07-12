@@ -67,12 +67,14 @@ jobs:
           username: ${{ secrets.USER_EMAIL }}
           password: ${{ secrets.PASS_EMAIL }}
           subject: "🧩 New component has been added!"
-          from: RN Testing <${{ secrets.USER_EMAIL }}>
+          from: React Native Testing Project <${{ secrets.USER_EMAIL }}>
           body: |
             Hey there,
-            A new component has been added to the repo.
-            Please check the README.md file to see the new component.
 
-            Regards,
-            Alain Iglesias
+            A new component has been added to the repository
+
+            Please check the <a href="https://github.com/${{ github.repository }}/blob/${{ github.sha }}/README.md">README.md</a> file to see the new component.
+
+            Happy testing!
+            Alain
           to: alain.iherrera@gmail.com
