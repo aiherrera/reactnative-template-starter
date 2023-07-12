@@ -32,9 +32,14 @@ jobs:
         run: |
           FILE_PATH=$(git diff --name-only HEAD^ -- 'src/components/')
           COMPONENT_NAME=$(echo "$FILE_PATH" | grep -o -P "(?<=src/components/).*(?=.js)")
+          if [[ -z "$COMPONENT_NAME" ]]; then
+            echo "No component name found. Skipping the rest of the steps."
+            exit 0
+          fi
           echo "::set-output name=component_name::$COMPONENT_NAME"
 
       - name: Update README.md
+        if: steps.extract.outputs.component_name != ''
         run: |
           COMPONENT_NAME="- New component added: ${{ steps.extract.outputs.component_name }}"
           sed -i "s/<!-- COMPONENT_LIST -->/$COMPONENT_NAME\\n<!-- COMPONENT_LIST -->/" README.md
