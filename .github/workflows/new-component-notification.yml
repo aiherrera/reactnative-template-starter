@@ -2,8 +2,8 @@ name: Component Notification
 
 on:
   push:
-    # paths:
-    #   - 'src/components/**'
+    paths:
+      - 'src/components/**'
 
 env:
   URL: https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git
