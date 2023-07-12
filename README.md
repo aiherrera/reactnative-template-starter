@@ -6,7 +6,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
->**Note**: This repository it's been created to show how to configure a testing environment for React Native using Jest and React Native Testing Library.
+> **Note**: This repository it's been created to show how to configure a testing environment for React Native using Jest and React Native Testing Library.
 
 ## 🚀 Step 1: Launch the Metro Server
 
@@ -54,19 +54,21 @@ This is one way to run your app — you can also run it directly from within And
 
 These are the steps followed to configure the testing environment:
 
-### Install required libraries 
+### Install required libraries
 
-```bash  
+```bash
 yarn add --dev jest @testing-library/react-native @testing-library/jest-native
 ```
 
 ### Add types for Jest
+
 ```bash
 yarn add --dev @types/jest
 ```
 
-### Add the matchers to your jest.config.js file: 
-```javascript 
+### Add the matchers to your jest.config.js file:
+
+```javascript
 module.exports = {
   preset: 'react-native',
   + setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
@@ -74,14 +76,14 @@ module.exports = {
 ```
 
 ### Create a component button
-  
+
 ```javascript
 // src/components/button.tsx
 import React, { FC } from 'react'
 import { TouchableOpacity, Text } from 'react-native'
 
 interface MyButtonProps {
-  text?: string
+  text?: string;
 }
 
 const MyButton: FC<MyButtonProps> = ({ text = 'Press Me' }) => {
@@ -133,8 +135,6 @@ describe('<MyButton />', () => {
 💡 Remember that when using the `--watch` flag, you are provided with several options to interact within the test runner:
 
 ![Alt text](./readme/runner-options.png)
-
-
 
 ## 🤓 Learn More
 
