@@ -47,8 +47,10 @@ jobs:
           REPO_PATH="https://github.com/${{ github.repository }}/blob/${{ github.sha }}/${{ env.COMPONENT_PATH }}"
           
           COMPONENT_LINK="- 🚀 New component added: [${{ env.COMPONENT_PATH }}]($REPO_PATH)"
+
+          echo COMPONENT_LINK
           
-          sed -i "s/<!-- COMPONENT_LIST -->/$COMPONENT_NAME\\n<!-- COMPONENT_LIST -->/" README.md
+          sed -i "s/<!-- COMPONENT_LIST -->/COMPONENT_LINK\\n<!-- COMPONENT_LIST -->/" README.md
           
           cat README.md
           
