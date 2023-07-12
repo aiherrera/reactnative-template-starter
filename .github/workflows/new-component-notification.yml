@@ -71,9 +71,12 @@ jobs:
           body: |
             Hey there,
 
-            A new component has been added to the repository
+            A new component has been added to the repository!
 
-            Please check the [README.md](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/README.md") file to see the new component.
+            Please check the README.md - https://github.com/${{ github.repository }}/blob/${{ github.sha }}/README.md" file to see the new component.
+
+            If you haven't cloned the repository yet, you can do it by running the following command: git clone git@github.com:aiherrera/reactnative-template-starter.git
+            If you already cloned the repository, you can pull the latest changes by running the following command: git pull
 
             Happy testing!
             Alain
