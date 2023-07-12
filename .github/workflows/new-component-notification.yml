@@ -45,6 +45,6 @@ jobs:
           sed -i "s/<!-- COMPONENT_LIST -->/$COMPONENT_NAME\\n<!-- COMPONENT_LIST -->/" README.md
           cat README.md
           git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.co
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git commit -am "🚀 New component added" --no-verify
           git push ${{ env.URL }}
