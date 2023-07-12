@@ -31,12 +31,11 @@ jobs:
         id: extract
         run: |
           FILE_PATH=$(git diff --name-only HEAD^ -- 'src/components/')
-          COMPONENT_NAME=$(echo "$FILE_PATH" | grep -o -P "(?<=src/components/).*(?=\.(js|jsx|ts|tsx))")
-          if [[ -z "$COMPONENT_NAME" ]]; then
-            echo "No component name found. Skipping the rest of the steps."
+          if [[ -z "$FILE_PATH" ]]; then
+            echo "No component path found. Skipping the rest of the steps."
             exit 0
           fi
-          echo "::set-output name=component_name::$COMPONENT_NAME"
+          echo "COMPONENT_PATH=$FILE_PATH" >> $GITHUB_ENV
 
       - name: Update README.md
         if: steps.extract.outputs.component_name != ''
