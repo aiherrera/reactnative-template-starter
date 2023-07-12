@@ -46,7 +46,7 @@ jobs:
 
           REPO_PATH="https://github.com/${{ github.repository }}/blob/${{ github.sha }}/${{ env.COMPONENT_PATH }}"
           
-          COMPONENT_LINK="- 🚀 New component added: [${{ env.COMPONENT_PATH }}]($REPO_PATH)"
+          COMPONENT_LINK="- 🧩 New component added: [${{ env.COMPONENT_PATH }}]($REPO_PATH)"
 
           echo $COMPONENT_LINK
           
