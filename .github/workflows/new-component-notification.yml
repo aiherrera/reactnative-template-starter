@@ -27,28 +27,25 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Extract Component Path
+      - name: Extract Component Name
         id: extract
         run: |
           FILE_PATH=$(git diff --name-only HEAD^ -- 'src/components/')
-          if [[ -z "$FILE_PATH" ]]; then
-            echo "No component path found. Skipping the rest of the steps."
+          COMPONENT_NAME=$(echo "$FILE_PATH" | grep -o -P "(?<=src/components/).*(?=\.(js|jsx|ts|tsx))")
+          if [[ -z "$COMPONENT_NAME" ]]; then
+            echo "No component name found. Skipping the rest of the steps."
             exit 0
           fi
-          echo "COMPONENT_PATH=$FILE_PATH" >> $GITHUB_ENV
-      
+          echo "::set-output name=component_name::$COMPONENT_NAME"
+
       - name: Update README.md
+        if: steps.extract.outputs.component_name != ''
         run: |
-          if [[ -z "${{ env.COMPONENT_PATH }}" ]]; then
-            echo "No component path found. Skipping the rest of the steps."
-            exit 0
-          fi
           REPO_PATH="https://github.com/${{ github.repository }}/blob/${{ github.sha }}/${{ env.COMPONENT_PATH }}"
-          COMPONENT_LINK="- New component added: [${{ env.COMPONENT_PATH }}]($REPO_PATH)"
-          sed -i "s/<!-- COMPONENT_LIST -->/$COMPONENT_LINK\\n<!-- COMPONENT_LIST -->/" README.md
+          COMPONENT_LINK="- 🚀 New component added: [${{ env.COMPONENT_PATH }}]($REPO_PATH)"
+          sed -i "s/<!-- COMPONENT_LIST -->/$COMPONENT_NAME\\n<!-- COMPONENT_LIST -->/" README.md
           cat README.md
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git commit -am "🚀 New component added" --no-verify
           git push ${{ env.URL }}
-        
