@@ -2,6 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Recent updates
 
+- New component added: link
 <!-- COMPONENT_LIST -->
 
 # Getting Started
