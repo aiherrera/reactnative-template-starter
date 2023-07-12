@@ -5,6 +5,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 - New component added: link
 
 
+COMPONENT_LINK
 <!-- COMPONENT_LIST -->
 
 # Getting Started
