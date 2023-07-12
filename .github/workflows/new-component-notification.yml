@@ -70,3 +70,21 @@ jobs:
           body: Job completed ${{job.status}}
           to: alain.iherrera@gmail.com
           from: Alain Iglesias
+
+      - name: Send email to notify new component
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.USER_EMAIL }}
+          password: ${{ secrets.PASS_EMAIL }}
+          subject: "🧩 New component has been added!"
+          from: RN Testing <${{ secrets.USER_EMAIL }}>
+          body: |
+            Hey there,
+            A new component has been added to the repo.
+            Please check the README.md file to see the new component.
+
+            Regards,
+            Alain Iglesias
+          to: alain.iherrera@gmail.com
