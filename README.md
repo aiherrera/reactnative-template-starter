@@ -2,16 +2,6 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Recent updates
 
-- 🧩 New component added: [src/components/link.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/a697f87f2ad81a424d676d02bb276403270f8e15/src/components/link.tsx)
-- 🧩 New component added: [src/components/link2.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/4f89d46ae34556048b2d7eae8cf3bbc4b84d67d8/src/components/link2.tsx)
-- 🧩 New component added: [src/components/link3.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/628f8adac79927928f0df0a54a36486824bd7c8b/src/components/link3.tsx)
-- 🧩 New component added: [src/components/link4.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/fb91d43628f1a241d53e22e329f6f2060ca66a59/src/components/link4.tsx)
-- 🧩 New component added: [src/components/link5.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/6cae3f4326e5f852801d5dd92d231093469d5242/src/components/link5.tsx)
-- 🧩 New component added: [src/components/link6.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/e68cb1a3aa5d0ca5eb8bc50df6910915ac175f3a/src/components/link6.tsx)
-- 🧩 New component added: [src/components/link7.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/8992c707b52adf6e090a61994598d078d1433703/src/components/link7.tsx)
-- 🧩 New component added: [src/components/link8.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/6ba4aaa7b57ba11e7a38e4c36911765d655a5fc6/src/components/link8.tsx)
-- 🧩 New component added: [src/components/link10.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/c5e27715602060e64c3817d3bf5edea289d138ad/src/components/link10.tsx)
-- 🧩 New component added: [src/components/link11.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/ee64b8600891c5f79ba7a4ddf51103e15b18d50a/src/components/link11.tsx)
 <!-- COMPONENT_LIST -->
 
 # Getting Started
