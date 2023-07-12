@@ -2,6 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Recent updates
 
+- 🧩 New component added: [src/components/link.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/a697f87f2ad81a424d676d02bb276403270f8e15/src/components/link.tsx)
 <!-- COMPONENT_LIST -->
 
 # Getting Started
