@@ -8,6 +8,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 - 🧩 New component added: [src/components/link4.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/fb91d43628f1a241d53e22e329f6f2060ca66a59/src/components/link4.tsx)
 - 🧩 New component added: [src/components/link5.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/6cae3f4326e5f852801d5dd92d231093469d5242/src/components/link5.tsx)
 - 🧩 New component added: [src/components/link6.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/e68cb1a3aa5d0ca5eb8bc50df6910915ac175f3a/src/components/link6.tsx)
+- 🧩 New component added: [src/components/link7.tsx](https://github.com/aiherrera/reactnative-template-starter/blob/8992c707b52adf6e090a61994598d078d1433703/src/components/link7.tsx)
 <!-- COMPONENT_LIST -->
 
 # Getting Started
