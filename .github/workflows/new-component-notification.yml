@@ -59,18 +59,6 @@ jobs:
           git commit -am "🧩 New component added" --no-verify
           git push ${{ env.URL }}
 
-      - name: Send some mail
-        uses: wadeww/send-email-action@master
-        with:
-          server_address: smtp.gmail.com
-          port: 465
-          username: ${{secrets.USER_EMAIL}}
-          password: ${{secrets.PASS_EMAIL}}
-          subject: Workflow finished
-          body: Job completed ${{job.status}}
-          to: alain.iherrera@gmail.com
-          from: Alain Iglesias
-
       - name: Send email to notify new component
         uses: dawidd6/action-send-mail@v3
         with:
