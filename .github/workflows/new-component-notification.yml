@@ -37,6 +37,9 @@ jobs:
           fi
           echo "COMPONENT_PATH=$FILE_PATH" >> $GITHUB_ENV
 
+          NAME=$(echo "$FILE_PATH" | grep -o -P "(?<=src/components/).*(?=.js)")
+          echo "COMPONENT_NAME=$NAME" >> $GITHUB_ENV
+
       - name: Update README.md
         run: |
           if [[ -z "${{ env.COMPONENT_PATH }}" ]]; then
@@ -71,7 +74,7 @@ jobs:
           body: |
             Hey there,
 
-            A new component has been added to the repository!
+            The component (${{ env.COMPONENT_NAME }}) has been added to the repository!
 
             Please check the README.md - https://github.com/${{ github.repository }}/blob/${{ github.sha }}/README.md" file to see the new component.
 
