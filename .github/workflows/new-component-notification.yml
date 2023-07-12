@@ -73,7 +73,7 @@ jobs:
 
             A new component has been added to the repository
 
-            Please check the <a href="https://github.com/${{ github.repository }}/blob/${{ github.sha }}/README.md">README.md</a> file to see the new component.
+            Please check the [README.md](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/README.md") file to see the new component.
 
             Happy testing!
             Alain
