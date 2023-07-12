@@ -27,13 +27,17 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: Extract Component Name
+        id: extract
+        run: |
+          FILE_PATH=$(git diff --name-only HEAD^ -- 'src/components/')
+          COMPONENT_NAME=$(echo "$FILE_PATH" | grep -o -P "(?<=src/components/).*(?=.js)")
+          echo "::set-output name=component_name::$COMPONENT_NAME"
+
       - name: Update README.md
         run: |
-          COMPONENT_NAME=$(git diff --name-only HEAD^ -- HEAD 'src/components/')
-          if [[ -n "$COMPONENT_NAME" ]]; then
-            COMPONENT_NAME="- New component added: $COMPONENT_NAME"
-            sed -i "0,/^<!-- COMPONENT_LIST -->$/ s//<!-- COMPONENT_LIST -->\n$COMPONENT_NAME/" README.md
-          fi
+          COMPONENT_NAME="- New component added: ${{ steps.extract.outputs.component_name }}"
+          sed -i "s/<!-- COMPONENT_LIST -->/$COMPONENT_NAME\\n<!-- COMPONENT_LIST -->/" README.md
           cat README.md
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.co
