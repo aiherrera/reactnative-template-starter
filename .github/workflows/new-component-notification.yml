@@ -38,12 +38,20 @@ jobs:
           echo "COMPONENT_PATH=$FILE_PATH" >> $GITHUB_ENV
 
       - name: Update README.md
-        if: steps.extract.outputs.component_name != ''
         run: |
+          if [[ -z "${{ env.COMPONENT_PATH }}" ]]; then
+            echo "No component path found. Skipping the rest of the steps."
+            exit 0
+          fi
+
           REPO_PATH="https://github.com/${{ github.repository }}/blob/${{ github.sha }}/${{ env.COMPONENT_PATH }}"
+          
           COMPONENT_LINK="- 🚀 New component added: [${{ env.COMPONENT_PATH }}]($REPO_PATH)"
+          
           sed -i "s/<!-- COMPONENT_LIST -->/$COMPONENT_NAME\\n<!-- COMPONENT_LIST -->/" README.md
+          
           cat README.md
+          
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git commit -am "🚀 New component added" --no-verify
