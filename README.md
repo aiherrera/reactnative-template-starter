@@ -14,7 +14,9 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 2. Check the available components in the `Last added components` section above 👆
 3. Read the [Card Information](https://github.com/users/aiherrera/projects/10) from the project, to get an idea of the business rules (each component would have attached the link to it's own card)
 4. Develop your test cases for the component(s)
-5. Raise a PR to the [develop](https://github.com/aiherrera/reactnative-template-starter/tree/develop) branch with your changes
+5. Test cases for each component must be inside the `__tests__` folder following the same structure that is inside of `src/components`
+6. Create a `branch` for each test use case within the following format `github_username/component_name` ex: `aiherrera/button`, `aiherrera/link`, etc
+7. Raise a PR to the [develop](https://github.com/aiherrera/reactnative-template-starter/tree/develop) branch with your changes
 
 
 # Steps for setting the project
