@@ -1,12 +1,23 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Recent updates
+# 🆕 Last added components
 
 <!-- COMPONENT_LIST -->
 
 # Getting Started
 
 > **Note**: This repository it's been created to show how to configure a testing environment for React Native using Jest and React Native Testing Library.
+
+## 📚 How to use this repository
+
+1. [Fork](https://github.com/aiherrera/reactnative-template-starter/fork) this repository
+2. Check the available components in the `Last added components` section above 👆
+3. Read the [Card Information](https://github.com/users/aiherrera/projects/10) from the project, to get an idea of the business rules (each component would have attached the link to it's own card)
+4. Develop your test cases for the component(s)
+5. Raise a PR to the [develop](https://github.com/aiherrera/reactnative-template-starter/tree/develop) branch with your changes
+
+
+# Steps for setting the project
 
 ## 🚀 Step 1: Launch the Metro Server
 
