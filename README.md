@@ -1,7 +1,6 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # 👩🏻‍🎨 Style Guide components
-This is a our [**Figma**](https://www.figma.com/file/tk8aajrDwi65Lt6S7DAa3o/Design-System?type=design&node-id=0%3A1&mode=design&t=vNfuDIqAmKLFNcC8-1). If you want to create some component, please follow this style guide and create your PR.# 👩🏻‍🎨 Style Guide components
 This is a our [**Figma**](https://www.figma.com/file/tk8aajrDwi65Lt6S7DAa3o/Design-System?type=design&node-id=0%3A1&mode=design&t=vNfuDIqAmKLFNcC8-1). If you want to create some component, please follow this style guide and create your PR.
 # Recent updates
 
